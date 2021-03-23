@@ -40,7 +40,13 @@ public class SimpleTestSuite {
 	public void display()
 	{
 		System.out.println("This is Display Method");
-		WebDriver driver = new ChromeDriver();
+
+		ChromeOptions options = new ChromeOptions();
+        System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        WebDriver driver = new ChromeDriver(options);
 		driver.get("https://uat.bordeauxindex.com/fine-wine/red-bordeaux/margaux/palmer-2016");
 	    System.out.println(driver.getTitle());
 		assertEquals(driver.getTitle(), "2016 Palmer");
