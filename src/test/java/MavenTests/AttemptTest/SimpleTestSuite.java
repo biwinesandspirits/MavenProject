@@ -43,7 +43,6 @@ public class SimpleTestSuite {
 		System.out.println("This is Display Method");
 
 		ChromeOptions options = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
